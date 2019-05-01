@@ -1,0 +1,15 @@
+.container {
+    height: 100vh;
+    background-image: url("../../images/Scene1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow:hidden;
+}
+
+.dialogue-container{
+    height:40vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,8 @@
+.tap-me{
+    padding:10px;
+    width:120px;
+    height: 25px;
+    background: yellow;
+    text-align: center;
+    cursor:pointer;
+}

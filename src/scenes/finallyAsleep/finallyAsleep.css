@@ -18,9 +18,16 @@
 .interaction-box {
     height: 70vh;
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
 }
 
-.thoughts-enter {
+.action-button {
+   
+}
+
+/* .thoughts-enter {
     opacity: 0.01;
   }
   
@@ -45,4 +52,4 @@
   .thoughts-appear.thoughts-appear-active {
     opacity: 1;
     transition: opacity .5s ease-in;
-  }
+  } */

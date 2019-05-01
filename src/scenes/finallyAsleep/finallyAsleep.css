@@ -4,12 +4,45 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
-    overflow:hidden;
+    overflow: hidden;
 }
 
-.dialogue-container{
-    height:40vh;
-    display:flex;
+.dialogue-container {
+    height: 30vh;
+    display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    flex-direction: row;
 }
+
+.interaction-box {
+    height: 70vh;
+    display: flex;
+}
+
+.thoughts-enter {
+    opacity: 0.01;
+  }
+  
+  .thoughts-enter.thoughts-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in 500ms;
+  }
+  
+  .thoughts-leave {
+    opacity: 1;
+  }
+  
+  .thoughts-leave.thoughts-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
+
+  .thoughts-appear {
+    opacity: 0.01;
+  }
+  
+  .thoughts-appear.thoughts-appear-active {
+    opacity: 1;
+    transition: opacity .5s ease-in;
+  }

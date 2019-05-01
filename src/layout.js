@@ -22,7 +22,6 @@ class Layout extends Component {
     }
 
     fetchPage() {
-        console.log(constants.PAGE_INDEX.OPENING);
         switch (this.state.pageIndex) {
             case constants.PAGE_INDEX.OPENING: return (<Opening nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.FINALLY_ASLEEP: return (<FinallyAsleep nextScene={this.nextScene.bind(this)} />);
@@ -38,7 +37,6 @@ class Layout extends Component {
 
     render() {
         let page = this.fetchPage();
-        { console.log(page) }
         return (
             <ReactCSSTransitionGroup
                 key={this.state.pageIndex}

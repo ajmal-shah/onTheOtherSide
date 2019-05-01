@@ -27,18 +27,22 @@ class FinallyAsleep extends Component {
             this.setState({
                 isEndOfScene: true,
             });
-            window.addEventListener('deviceorientation', this.deviceOrientationListener);
+            window.addEventListener('deviceorientation', this.deviceOrientationListener.bind(this));
         }
     }
 
     deviceOrientationListener(event) {
         let z = event.gamma;
-        console.log(event.alpha, event.beta, event.gamma);
         if (event.beta < -160 || event.beta > 160) {
-            navigator.vibrate([100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30, 100]);
+            // navigator.vibrate([100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30, 100]);
+            this.nextScene();
         }
     }
-    
+
+    nextScene() {
+        this.props.nextScene(2);
+    }
+
     render() {
 
         return (
@@ -56,7 +60,7 @@ class FinallyAsleep extends Component {
                     <ThoughtBubble>{thoughts[this.state.tapCount]}</ThoughtBubble>
                 </div>
                 <div className="interaction-box" onClick={() => this.onTap()} >
-                    {this.state.isEndOfScene ? (<ActionBox>
+                    {this.state.isEndOfScene ? (<ActionBox click={() => this.nextScene()}>
                         Turn the phone over to sleep
                     </ActionBox>) : null}
                 </div>

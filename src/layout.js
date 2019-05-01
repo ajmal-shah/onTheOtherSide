@@ -8,6 +8,8 @@ import * as constants from './common/constants';
 //Scenes
 import Opening from "./scenes/opening/opening";
 import FinallyAsleep from "./scenes/finallyAsleep/finallyAsleep";
+import Morning from "./scenes/morning/morning";
+
 
 class Layout extends Component {
     constructor() {
@@ -25,6 +27,7 @@ class Layout extends Component {
         switch (this.state.pageIndex) {
             case constants.PAGE_INDEX.OPENING: return (<Opening nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.FINALLY_ASLEEP: return (<FinallyAsleep nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.MORNING: return (<Morning nextScene={this.nextScene.bind(this)} />);
             default: return null;
         }
     }

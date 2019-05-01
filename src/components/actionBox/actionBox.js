@@ -6,7 +6,7 @@ class ActionBox extends Component {
 
     render() {
         return (
-            <div className="action-box">
+            <div className="action-box" onClick={() => this.props.click()}>
                 {this.props.children}
             </div>
         )

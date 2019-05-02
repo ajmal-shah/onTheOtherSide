@@ -17,6 +17,12 @@
     background: rgba(8, 8, 9, 0.9);
 }
 
+.interstitial {
+    height: 100vh;
+    width: 100%;
+    background: rgba(8, 8, 9, 0.98);
+}
+
 .time {
     font-size: 72px;
     font-weight: 100;
@@ -35,23 +41,36 @@
     padding-top: 100%;
 }
 
-@media (min-width: 575.98px) {
+.dialogue-container {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+}
 
+.interaction-box {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+@media (min-width: 575.98px) {
     .time {
         font-size: 72px;
         font-weight: 100;
         padding-top: 10%;
         color: #fff;
     }
-    
     .date {
         font-size: 16px;
         font-weight: 400;
         padding-top: 10px;
         color: #fff;
     }
-    
     .action-buttons {
         padding-top: 20%;
     }
- }
+}

@@ -9,6 +9,7 @@ import * as constants from './common/constants';
 import Opening from "./scenes/opening/opening";
 import FinallyAsleep from "./scenes/finallyAsleep/finallyAsleep";
 import Morning from "./scenes/morning/morning";
+import Boss from "./scenes/boss/boss";
 
 
 class Layout extends Component {
@@ -28,6 +29,7 @@ class Layout extends Component {
             case constants.PAGE_INDEX.OPENING: return (<Opening nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.FINALLY_ASLEEP: return (<FinallyAsleep nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.MORNING: return (<Morning nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.BOSS: return (<Boss nextScene={this.nextScene.bind(this)} />);
             default: return null;
         }
     }

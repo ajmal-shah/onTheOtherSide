@@ -5,7 +5,7 @@ import "./finallyAsleep.css";
 
 //Components
 import ThoughtBubble from '../../components/thoughtBubble/thoughtBubble';
-import ActionBox from '../../components/actionBox/actionBox'
+import ActionBox from '../../components/actionBox/actionBox';
 import thoughts from './finallyAsleepContent';
 
 class FinallyAsleep extends Component {
@@ -23,7 +23,7 @@ class FinallyAsleep extends Component {
             this.setState({
                 tapCount: ++tap,
             });
-        } else if (this.state.tapCount == thoughts.length - 1) {
+        } else if (this.state.tapCount === thoughts.length - 1) {
             this.setState({
                 isEndOfScene: true,
             });
@@ -32,7 +32,6 @@ class FinallyAsleep extends Component {
     }
 
     deviceOrientationListener(event) {
-        let z = event.gamma;
         if (event.beta < -160 || event.beta > 160) {
             // navigator.vibrate([100, 30, 100, 30, 100, 30, 200, 30, 200, 30, 200, 30, 100, 30, 100, 30, 100]);
             this.nextScene();

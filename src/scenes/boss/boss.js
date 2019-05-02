@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import "./boss.css";
 
 //Components
-import ThoughtBubble from '../../components/thoughtBubble/thoughtBubble';
+import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
 import conversation from './bossContent';
 
@@ -14,18 +14,18 @@ class Boss extends Component {
             isEndOfScene: false,
         }
     }
-  
+
     onTap() {
         let tap = this.state.tapCount;
-        // if (this.state.tapCount < thoughts.length - 1) {
-        //     this.setState({
-        //         tapCount: ++tap,
-        //     });
-        // } else if (this.state.tapCount === thoughts.length - 1) {
-        //     this.setState({
-        //         isEndOfScene: true,
-        //     });
-        // }
+        if (this.state.tapCount < conversation.length - 1) {
+            this.setState({
+                tapCount: ++tap,
+            });
+        } else if (this.state.tapCount === conversation.length - 1) {
+            this.setState({
+                isEndOfScene: true,
+            });
+        }
     }
 
     nextScene() {
@@ -33,10 +33,18 @@ class Boss extends Component {
     }
 
     render() {
+        let dialogue = conversation.map((dialogueObject, index) => {
+            if (index <= this.state.tapCount) {
+                return (
+                    <SpeechBubble key={index} right={dialogueObject.type === "RIGHT" ? true : false}>
+                        {dialogueObject.text}
+                    </SpeechBubble>)
+            }
+        });
         return (
             <div className="boss-container">
-                <div className="dialogue-container">
-                    <ThoughtBubble>{}</ThoughtBubble>
+                <div className="speech-dialogue-container">
+                    {dialogue}
                 </div>
                 <div className="interaction-box" onClick={() => this.onTap()} >
                     {this.state.isEndOfScene ? (<ActionBox click={() => this.nextScene()}>

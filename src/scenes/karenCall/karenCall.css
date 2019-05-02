@@ -1,0 +1,30 @@
+.karen-dialogue-container{
+    height: 100vh;
+    background-image: url("../../images/Scene6.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+}
+
+.speech-dialogue-container {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    /* padding-top:20px; */
+}
+
+@media (min-width: 575.98px) {
+    .speech-dialogue-container {
+        height: 30vh;
+        width: 320px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-left:38%;
+        /* align-items: flex-start; */
+        /* padding-top:20px; */
+    }
+    
+}

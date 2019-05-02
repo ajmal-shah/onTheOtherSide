@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import "./boss.css";
+import "./karenCall.css";
 
 //Components
 import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
-import conversation from './bossContent';
+import conversation from './karenCallContent';
 
-class Boss extends Component {
+class KarenCall extends Component {
     constructor() {
         super();
         this.state = {
@@ -29,7 +29,7 @@ class Boss extends Component {
     }
 
     nextScene() {
-        this.props.nextScene(4);
+        // this.props.nextScene(4);
     }
 
     render() {
@@ -42,18 +42,19 @@ class Boss extends Component {
             }
         });
         return (
-            <div className="boss-container">
+            <div className="karen-dialogue-container">
                 <div className="speech-dialogue-container">
                     {dialogue}
                 </div>
                 <div className="interaction-box" onClick={() => this.onTap()} >
-                    {this.state.isEndOfScene ? (<ActionBox click={() => this.nextScene()}>
-                        Get to work
-                    </ActionBox>) : null}
+                    {this.state.isEndOfScene ? (<div>
+                        <ActionBox click={() => this.nextScene()}>Take a walk</ActionBox>
+                        <ActionBox click={() => this.nextScene()}>Finish work</ActionBox>
+                    </div>) : null}
                 </div>
             </div>
         )
     }
 }
 
-export default Boss;
+export default KarenCall;

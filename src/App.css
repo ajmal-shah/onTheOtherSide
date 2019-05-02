@@ -3,3 +3,19 @@
     min-width: 100vw;
     background: #111219;
 }
+
+.dialogue-container {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.interaction-box {
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+}

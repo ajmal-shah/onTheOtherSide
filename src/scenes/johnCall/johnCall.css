@@ -1,0 +1,8 @@
+.john-call-container{
+    height: 100vh;
+    background-image: url("../../images/Scene12.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+}

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import "./dinner.css";
+import "./explain.css";
 
 //Components
 import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
-import conversation from './dinnerContent';
+import conversation from './explainContent';
 
-class Dinner extends Component {
+class Explain extends Component {
     constructor() {
         super();
         this.state = {
@@ -29,7 +29,11 @@ class Dinner extends Component {
     }
 
     nextScene() {
-        this.props.nextScene(10);
+        this.props.nextScene(11);
+    }
+
+    yesOrNo(){
+
     }
 
     render() {
@@ -42,14 +46,14 @@ class Dinner extends Component {
             }
         });
         return (
-            <div className="dinner-container">
+            <div className="explain-container">
                 <div className="speech-dialogue-container">
                     {dialogue}
                 </div>
                 <div className="interaction-box" onClick={() => this.onTap()} >
                     {this.state.isEndOfScene ? (<div>
-                        <ActionBox click={() => this.nextScene()}>Next</ActionBox>
-                       
+                        <ActionBox click={() => this.nextScene()}>Try to explain</ActionBox>
+                        <ActionBox click={() => this.yesOrNo()}>Let's go</ActionBox>
                     </div>) : null}
                 </div>
             </div>
@@ -57,4 +61,4 @@ class Dinner extends Component {
     }
 }
 
-export default Dinner;
+export default Explain;

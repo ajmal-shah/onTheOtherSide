@@ -16,6 +16,8 @@ import SocialCircle from "./scenes/socialCircle/socialCircle";
 import Fight from "./scenes/fight/fight";
 import Dinner from "./scenes/dinner/dinner";
 import Lost from "./scenes/lost/lost";
+import Explain from "./scenes/explain/explain";
+import JohnCall from "./scenes/johnCall/johnCall";
 
 class Layout extends Component {
     constructor() {
@@ -41,6 +43,8 @@ class Layout extends Component {
             case constants.PAGE_INDEX.FIGHT: return (<Fight nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.DINNER: return (<Dinner nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.LOST: return (<Lost nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.EXPLAIN: return (<Explain nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.JOHN_CALL: return (<JohnCall nextScene={this.nextScene.bind(this)} />);
 
             default: return null;
         }

@@ -1,0 +1,115 @@
+.health-box-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    overflow: hidden;
+    background: #111219;
+    opacity: 0.98;
+    flex-direction: column;
+}
+
+.text-area {
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: row;
+    color: #fff;
+    font-size: 17px;
+    width: 400px;
+    text-align: center;
+    padding: 40px 30px;
+}
+
+.health-area {
+    height: 55vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    color: #fff;
+    font-size: 14px;
+    padding: 100px 30px 30px 30px;
+}
+
+.next-button-area {
+    height: 15vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 400px;
+    font-size: 14px;
+}
+
+.meter-container {
+    width: 100%;
+    padding: 20px 0;
+}
+
+.meter-label {
+    padding: 10px 0;
+}
+
+.health-bar-custom {
+    opacity: 0.95;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+.health-bar-custom>.progress-bar {
+    background: #fff;
+    border-radius: 10px;
+}
+
+.next-button {
+    width: 120px;
+    border-radius: 50px;
+    padding: 10px 15px;
+    background: #fff;
+    color: #111219;
+    text-align: center;
+    font-weight: 600;
+    opacity: 0.95;
+}
+
+@media (min-width: 575.98px) {
+    .text-area {
+        height: 30vh;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-direction: row;
+        color: #fff;
+        font-size: 17px;
+        width: 400px;
+        text-align: center;
+        padding: 40px 30px;
+    }
+    
+    .health-area {
+        height: 60vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        color: #fff;
+        font-size: 14px;
+        padding: 80px 30px 30px 30px;
+    }
+    
+    .next-button-area {
+        height: 10vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        width: 400px;
+        font-size: 14px;
+    }
+}

@@ -29,7 +29,7 @@ class JohnCall extends Component {
     }
 
     nextScene() {
-        // this.props.nextScene(6);
+        this.props.nextScene(12);
     }
 
     render() {

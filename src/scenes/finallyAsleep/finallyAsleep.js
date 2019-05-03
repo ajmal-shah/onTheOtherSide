@@ -15,6 +15,7 @@ class FinallyAsleep extends Component {
             tapCount: 0,
             isEndOfScene: false,
         }
+        this.deviceOrientationListener = this.deviceOrientationListener.bind(this);
     }
 
     onTap() {
@@ -27,7 +28,7 @@ class FinallyAsleep extends Component {
             this.setState({
                 isEndOfScene: true,
             });
-            window.addEventListener('deviceorientation', this.deviceOrientationListener.bind(this));
+            window.addEventListener('deviceorientation', this.deviceOrientationListener);
         }
     }
 
@@ -40,6 +41,10 @@ class FinallyAsleep extends Component {
 
     nextScene() {
         this.props.nextScene(2);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('deviceorientation', this.deviceOrientationListener);
     }
 
     render() {

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import "./karenCall.css";
+import "./socialCircle.css";
 
 //Components
 import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
-import conversation from './karenCallContent';
+import conversation from './socialCircleContent';
 
-class KarenCall extends Component {
+class SocialCircle extends Component {
     constructor() {
         super();
         this.state = {
@@ -28,8 +28,12 @@ class KarenCall extends Component {
         }
     }
 
-    nextScene() {
-        this.props.nextScene(6);
+    nextScene(isPub) {
+        if (isPub) {
+            this.props.nextScene(7);
+        } else {
+            this.props.nextScene(8);
+        }
     }
 
     render() {
@@ -42,14 +46,14 @@ class KarenCall extends Component {
             }
         });
         return (
-            <div className="karen-dialogue-container">
+            <div className="social-circle-container">
                 <div className="speech-dialogue-container">
                     {dialogue}
                 </div>
                 <div className="interaction-box" onClick={() => this.onTap()} >
                     {this.state.isEndOfScene ? (<div>
-                        <ActionBox click={() => this.nextScene()}>Take a walk</ActionBox>
-                        <ActionBox click={() => this.nextScene()}>Finish work</ActionBox>
+                        <ActionBox click={() => this.nextScene(true)}>Okay! Let's go</ActionBox>
+                        <ActionBox click={() => this.nextScene(false)}>No, I don't think so</ActionBox>
                     </div>) : null}
                 </div>
             </div>
@@ -57,4 +61,4 @@ class KarenCall extends Component {
     }
 }
 
-export default KarenCall;
+export default SocialCircle;

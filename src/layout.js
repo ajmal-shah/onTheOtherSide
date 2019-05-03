@@ -12,6 +12,10 @@ import Morning from "./scenes/morning/morning";
 import Boss from "./scenes/boss/boss";
 import Work from "./scenes/work/work";
 import KarenCall from "./scenes/karenCall/karenCall";
+import SocialCircle from "./scenes/socialCircle/socialCircle";
+import Fight from "./scenes/fight/fight";
+import Dinner from "./scenes/dinner/dinner";
+import Lost from "./scenes/lost/lost";
 
 class Layout extends Component {
     constructor() {
@@ -33,6 +37,11 @@ class Layout extends Component {
             case constants.PAGE_INDEX.BOSS: return (<Boss nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.WORK: return (<Work nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.KAREN_CALL: return (<KarenCall nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.SOCIAL_CIRCLE: return (<SocialCircle nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.FIGHT: return (<Fight nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.DINNER: return (<Dinner nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.LOST: return (<Lost nextScene={this.nextScene.bind(this)} />);
+
             default: return null;
         }
     }

@@ -1,9 +1,8 @@
-.karen-dialogue-container{
+.fight-container{
     height: 100vh;
-    background-image: url("../../images/Scene6.jpg");
+    background-image: url("../../images/Scene8.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     overflow: hidden;
 }
-

@@ -1,9 +1,8 @@
-.karen-dialogue-container{
+.dinner-container{
     height: 100vh;
-    background-image: url("../../images/Scene6.jpg");
+    background-image: url("../../images/Scene9.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     overflow: hidden;
 }
-

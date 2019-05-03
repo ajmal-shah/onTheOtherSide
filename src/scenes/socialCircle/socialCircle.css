@@ -1,9 +1,8 @@
-.karen-dialogue-container{
+.social-circle-container{
     height: 100vh;
-    background-image: url("../../images/Scene6.jpg");
+    background-image: url("../../images/Scene7.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     overflow: hidden;
 }
-

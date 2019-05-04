@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./morning.css";
 
+import { MDBProgress } from 'mdbreact';
+
 //components
 import ActionBox from '../../components/actionBox/actionBox';
 import ThoughtBubble from '../../components/thoughtBubble/thoughtBubble';
@@ -16,9 +18,11 @@ class Morning extends Component {
             interstitialScreen: false,
             alarmTime: ["07 : 30", "07 : 50", "08 : 10"],
             tapCount: 0,
+            routineProgressCount: 1,
             isEndOfScene: false,
             isKarenRoutine: false,
             isHealthScreen: false,
+            isNextVisible: false,
             healthData: {
                 text: "Performing the routine has consumed a lot of time. You are late to work again. Your colleagues doubt your committment.",
                 johnValue: 80,
@@ -28,6 +32,7 @@ class Morning extends Component {
         };
         this.url = require('../../sound/alarm.mp3');
         this.audio = new Audio(this.url);
+        this.devicemotionListener = this.devicemotionListener.bind(this);
     }
     componentWillMount() {
         this.startAlarm();
@@ -86,6 +91,28 @@ class Morning extends Component {
         this.setState({
             isKarenRoutine: true,
         });
+        window.addEventListener('devicemotion', this.devicemotionListener);
+    }
+
+    devicemotionListener(event) {
+        console.log(event.acceleration.x);
+        if (event.acceleration.x > 10 && event.acceleration.x < 20) {
+            this.setRoutineProgress();
+        }
+    }
+
+    setRoutineProgress() {
+        let routineCount = this.state.routineProgressCount;
+        if (this.state.routineProgressCount < 20) {
+            this.setState({
+                routineProgressCount: ++routineCount,
+            });
+        } else if (this.state.routineProgressCount === 20) {
+            this.setState({
+                isNextVisible: true,
+            });
+            window.removeEventListener('devicemotion', this.devicemotionListener);
+        }
     }
 
     spawnHealthScreen() {
@@ -101,7 +128,6 @@ class Morning extends Component {
         } else {
             this.props.nextScene(14);
         }
-
     }
 
     render() {
@@ -131,12 +157,17 @@ class Morning extends Component {
         </div>);
 
         let routine = (<div className="routine-container">
-            <div className="text-area">Blaaa Bla Blaa blum blim Bluuu</div>
-            <div className="action-area"></div>
-            <div className="next-button-area">
-                <div className="next-button" onClick={() => this.spawnHealthScreen()}>
-                    Next
+            <div className="text-area">Karen is obsessive about health and insists that while getting up, you stretch, roll onto your side and push yourself to sitting before you stand.</div>
+            <div className="action-area">
+                <div className="routine-progress-text">Shake phone slowly to do the routine</div>
+                <div className="routine-progress-bar">
+                    <MDBProgress value={this.state.routineProgressCount * 5} height="12px" className="health-bar-custom" />
                 </div>
+            </div>
+            <div className="next-button-area">
+                {this.state.isNextVisible ? (<div className="next-button" onClick={() => this.spawnHealthScreen()}>
+                    Next
+                </div>) : null}
             </div>
         </div>);
 

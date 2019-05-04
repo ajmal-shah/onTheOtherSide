@@ -14,7 +14,7 @@ class Angry extends Component {
             tapCount: 0,
             isEndOfScene: false,
             healthData: {
-                text: " Karen is upset that you have not done the morning routine. Karen's composure has gone down",
+                text: "Karen is obsessed with healthy lviving and insists on following her routine while waking up.Karen is upset that you never listen to her.",
                 johnValue: 80,
                 karenValue: 80,
                 socialAcceptance: 100

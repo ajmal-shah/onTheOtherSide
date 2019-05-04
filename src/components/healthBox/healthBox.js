@@ -15,7 +15,7 @@ class HealthBox extends Component {
             <div className="health-area">
                 <div className="meter-container">
                     <div className="meter-label">
-                        You
+                        Your Composure
                 </div>
                     <div className="health-bar">
                         <MDBProgress value={this.props.johnValue} height="12px" className="health-bar-custom" />
@@ -23,7 +23,7 @@ class HealthBox extends Component {
                 </div>
                 <div className="meter-container">
                     <div className="meter-label">
-                        Karen
+                        Karen's Composure
                 </div>
                     <div className="health-bar">
                         <MDBProgress value={this.props.karenValue} height="12px" className="health-bar-custom" />

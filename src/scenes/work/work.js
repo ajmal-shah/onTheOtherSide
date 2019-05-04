@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import "./work.css";
 
+import { MDBProgress } from 'mdbreact';
+
 //Components
 import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
@@ -17,11 +19,12 @@ class Work extends Component {
 
     onTap() {
         let tap = this.state.tapCount;
-        if (this.state.tapCount < 5) {
+        navigator.vibrate(30);
+        if (this.state.tapCount < 15) {
             this.setState({
                 tapCount: ++tap,
             });
-        } else if (this.state.tapCount === 5) {
+        } else if (this.state.tapCount === 15) {
             this.setState({
                 isKarenCall: true,
             });
@@ -47,7 +50,15 @@ class Work extends Component {
 
     render() {
         const workContent = (<div>
-            <div className="dialogue-container"></div>
+            <div className="dialogue-container">
+                <div className="work-progress-section">
+                    <div>Tap to work</div>
+                    <div className="work-progress-container">
+                        <MDBProgress value={this.state.tapCount * 5} height="12px" className="work-bar-custom" />
+                    </div>
+                </div>
+
+            </div>
             <div className="interaction-box" onClick={() => this.onTap()} >
                 {this.state.isEndOfScene ? (<ActionBox click={() => this.nextScene()}>
 

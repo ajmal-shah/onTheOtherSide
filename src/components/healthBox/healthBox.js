@@ -6,6 +6,17 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { MDBProgress } from 'mdbreact';
 
 class HealthBox extends Component {
+    componentWillMount(){
+        if(this.props.johnValue){
+            window.johnValue = window.johnValue - 20;
+        }
+        if(this.props.karenValue){
+            window.karenValue = window.karenValue - 20;
+        }
+        if(this.props.socialAcceptance){
+            window.socialAcceptance = window.socialAcceptance - 20;
+        }
+    }
 
     render() {
         let health = (<div>
@@ -18,7 +29,7 @@ class HealthBox extends Component {
                         Your Composure
                 </div>
                     <div className="health-bar">
-                        <MDBProgress value={this.props.johnValue} height="12px" className="health-bar-custom" />
+                        <MDBProgress value={window.johnValue} height="12px" className="health-bar-custom" />
                     </div>
                 </div>
                 <div className="meter-container">
@@ -26,7 +37,7 @@ class HealthBox extends Component {
                         Karen's Composure
                 </div>
                     <div className="health-bar">
-                        <MDBProgress value={this.props.karenValue} height="12px" className="health-bar-custom" />
+                        <MDBProgress value={window.karenValue} height="12px" className="health-bar-custom" />
                     </div>
                 </div>
                 <div className="meter-container">
@@ -34,7 +45,7 @@ class HealthBox extends Component {
                         Social Acceptance
                 </div>
                     <div className="health-bar">
-                        <MDBProgress value={this.props.socialAcceptance} height="12px" className="health-bar-custom" />
+                        <MDBProgress value={window.socialAcceptance} height="12px" className="health-bar-custom" />
                     </div>
                 </div>
             </div>

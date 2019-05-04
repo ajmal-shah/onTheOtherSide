@@ -1,30 +1,26 @@
 import React, { Component } from 'react';
-import "./angry.css";
+import "./judge.css";
 
 //Components
 import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
-import conversation from './angryContent';
 import HealthBox from '../../components/healthBox/healthBox';
+import conversation from './judgeContent';
 
-class Angry extends Component {
+class Judge extends Component {
     constructor() {
         super();
         this.state = {
             tapCount: 0,
             isEndOfScene: false,
+            isHealthScreen: false,
             healthData: {
-                text: "Karen is obsessed with healthy living and insists on following her routine while waking up. Karen is upset that you never listen to her.",
-                johnValue: 80,
-                karenValue: 80,
-                socialAcceptance: 100
+                text: "You are missing from your seat too often. Your colleagues doubt your credibility.",
+              
             }
         }
     }
-    componentWillMount() {
-        // window.johnValue = window.johnValue - 20; 
-        // window.karenValue = window.karenValue - 20;
-    }
+
     onTap() {
         let tap = this.state.tapCount;
         navigator.vibrate(30);
@@ -39,8 +35,14 @@ class Angry extends Component {
         }
     }
 
+    spawnHealthScreen() {
+        this.setState({
+            isHealthScreen: true,
+        });
+    }
+
     nextScene() {
-        this.props.nextScene(3);
+        this.props.nextScene(6);
     }
 
     render() {
@@ -52,25 +54,27 @@ class Angry extends Component {
                     </SpeechBubble>)
             }
         });
-
         return (
-            <div className="angry-container">
+            <div className="judge-container">
                 <div className="speech-dialogue-container">
                     {dialogue}
                 </div>
                 <div className="interaction-box" onClick={() => this.onTap()} >
-                    {this.state.isEndOfScene ?
-                        (<HealthBox
-                            text={this.state.healthData.text}
-                            johnValue={true}
-                            karenValue={true}
-                            socialAcceptance={false}
-                            click={() => this.nextScene()}
-                        />) : null}
+                    {this.state.isEndOfScene ? (<ActionBox click={() => this.spawnHealthScreen()}>
+                        Next
+                    </ActionBox>) : null}
                 </div>
+                {this.state.isHealthScreen ?
+                    (<HealthBox
+                        text={this.state.healthData.text}
+                        johnValue={true}
+                        karenValue={false}
+                        socialAcceptance={true}
+                        click={() => this.nextScene()}
+                    />) : null}
             </div>
         )
     }
 }
 
-export default Angry;
+export default Judge;

@@ -17,6 +17,7 @@ class Boss extends Component {
 
     onTap() {
         let tap = this.state.tapCount;
+        navigator.vibrate(30);
         if (this.state.tapCount < conversation.length - 1) {
             this.setState({
                 tapCount: ++tap,

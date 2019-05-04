@@ -36,6 +36,33 @@
     padding-top: 100%;
 }
 
+.work-progress-container {
+    width: 400px;
+    padding: 15px 30px;
+  
+}
+
+.work-bar-custom {
+    opacity: 0.95;
+    background: rgba(11, 11, 19, 0.15);
+    border-radius: 10px;
+}
+
+.work-progress-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 14px;
+    color:#111219;
+    font-weight:500;
+}
+
+.work-bar-custom>.progress-bar {
+    background: #111219;
+    border-radius: 10px;
+}
+
 @media (min-width: 575.98px) {
     .caller-name {
         font-size: 72px;
@@ -48,7 +75,7 @@
         font-weight: 400;
         padding-top: 10px;
         color: #fff;
-        font-style: italic; 
+        font-style: italic;
     }
     .action-buttons {
         padding-top: 20%;

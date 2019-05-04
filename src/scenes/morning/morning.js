@@ -36,6 +36,8 @@ class Morning extends Component {
     }
     componentWillMount() {
         this.startAlarm();
+        // window.johnValue = window.johnValue - 20;
+        // window.socialAcceptance = window.socialAcceptance - 20;
     }
 
     startAlarm() {
@@ -76,6 +78,7 @@ class Morning extends Component {
 
     onTap() {
         let tap = this.state.tapCount;
+        navigator.vibrate(30);
         if (this.state.tapCount < thoughts.length - 1) {
             this.setState({
                 tapCount: ++tap,
@@ -95,7 +98,7 @@ class Morning extends Component {
     }
 
     devicemotionListener(event) {
-        console.log(event.acceleration.x);
+        // console.log(event.acceleration.x);
         if (event.acceleration.x > 10 && event.acceleration.x < 20) {
             this.setRoutineProgress();
         }
@@ -178,9 +181,9 @@ class Morning extends Component {
                 {this.state.isHealthScreen ?
                     (<HealthBox
                         text={this.state.healthData.text}
-                        johnValue={this.state.healthData.johnValue}
-                        karenValue={this.state.healthData.karenValue}
-                        socialAcceptance={this.state.healthData.socialAcceptance}
+                        johnValue={true}
+                        karenValue={false}
+                        socialAcceptance={true}
                         click={() => this.nextScene(true)}
                     />) : null}
             </div>

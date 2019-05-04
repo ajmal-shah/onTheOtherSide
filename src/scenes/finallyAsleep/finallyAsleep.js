@@ -19,6 +19,7 @@ class FinallyAsleep extends Component {
 
     onTap() {
         let tap = this.state.tapCount;
+        navigator.vibrate(30);
         if (this.state.tapCount < thoughts.length - 1) {
             this.setState({
                 tapCount: ++tap,

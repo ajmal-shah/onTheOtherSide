@@ -20,6 +20,7 @@ import Lost from "./scenes/lost/lost";
 import Explain from "./scenes/explain/explain";
 import JohnCall from "./scenes/johnCall/johnCall";
 import Resolution from "./scenes/resolution/resolution";
+import Judge from "./scenes/judge/judge";
 
 class Layout extends Component {
     constructor() {
@@ -49,6 +50,7 @@ class Layout extends Component {
             case constants.PAGE_INDEX.JOHN_CALL: return (<JohnCall nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.RESOLUTION: return (<Resolution nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.ANGRY: return (<Angry nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.JUDGE: return (<Judge nextScene={this.nextScene.bind(this)} />);
 
             default: return null;
         }

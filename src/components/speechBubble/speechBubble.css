@@ -16,7 +16,7 @@
     padding: 10px;
     width: 200px;
     border-radius: 10px 10px 10px 0;
-    opacity: 0.95;
+    /* opacity: 0.95; */
 }
 
 .speech-bubble-right {

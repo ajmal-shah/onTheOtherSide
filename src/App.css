@@ -28,6 +28,33 @@
     /* padding-top:20px; */
 }
 
+.button-enter {
+    opacity: 0.01;
+}
+
+.button-enter.button-enter-active {
+    opacity: 0.9;
+    transition: opacity 500ms ease-in;
+}
+
+.button-leave {
+    opacity: 0.9;
+}
+
+.button-leave.button-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+.button-appear {
+    opacity: 0.01;
+}
+
+.button-appear.button-appear-active {
+    opacity: 0.9;
+    transition: opacity .5s ease-in;
+}
+
 @media (min-width: 575.98px) {
     .speech-dialogue-container {
         height: 30vh;
@@ -35,9 +62,8 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        margin-left:38%;
+        margin-left: 38%;
         /* align-items: flex-start; */
         /* padding-top:20px; */
     }
-    
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import "./finallyAsleep.css";
-
-// import { CSSTransition, TransitionGroup } from 'react-transition-group';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 //Components
 import ThoughtBubble from '../../components/thoughtBubble/thoughtBubble';
@@ -51,15 +50,7 @@ class FinallyAsleep extends Component {
 
         return (
             <div className="container">
-                {/* <TransitionGroup className="dialogue-container">
-                    <CSSTransition
-                        key={this.state.tapCount}
-                        classNames="thoughts"
-                        timeout={1000}
-                        >
-                        <ThoughtBubble>{thoughts[this.state.tapCount]}</ThoughtBubble>
-                    </CSSTransition>
-                </TransitionGroup> */}
+                
                 <div className="dialogue-container">
                     <ThoughtBubble>{thoughts[this.state.tapCount]}</ThoughtBubble>
                 </div>

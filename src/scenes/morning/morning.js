@@ -4,6 +4,7 @@ import "./morning.css";
 //components
 import ActionBox from '../../components/actionBox/actionBox';
 import ThoughtBubble from '../../components/thoughtBubble/thoughtBubble';
+import HealthBox from '../../components/healthBox/healthBox';
 import thoughts from './morningContent';
 
 class Morning extends Component {
@@ -16,6 +17,14 @@ class Morning extends Component {
             alarmTime: ["07 : 30", "07 : 50", "08 : 10"],
             tapCount: 0,
             isEndOfScene: false,
+            isKarenRoutine: false,
+            isHealthScreen: false,
+            healthData: {
+                text: "Performing the routine has consumed a lot of time. You are late to work again. Your colleagues doubt your committment.",
+                johnValue: 80,
+                karenValue: 100,
+                socialAcceptance: 80
+            }
         };
         this.url = require('../../sound/alarm.mp3');
         this.audio = new Audio(this.url);
@@ -73,8 +82,26 @@ class Morning extends Component {
         }
     }
 
-    nextScene() {
-        this.props.nextScene(3);
+    morningRoutine() {
+        this.setState({
+            isKarenRoutine: true,
+        });
+    }
+
+    spawnHealthScreen() {
+        this.setState({
+            isHealthScreen: true,
+            isKarenRoutine: false,
+        });
+    }
+
+    nextScene(routine) {
+        if (routine) {
+            this.props.nextScene(3);
+        } else {
+            this.props.nextScene(14);
+        }
+
     }
 
     render() {
@@ -97,15 +124,34 @@ class Morning extends Component {
             </div>
             <div className="interaction-box" onClick={() => this.onTap()} >
                 {this.state.isEndOfScene ? (<div className="action-buttons">
-                    <ActionBox click={() => this.nextScene()}>Do Karen's morning routine</ActionBox>
-                    <ActionBox click={() => this.nextScene()}>Spring out of bed</ActionBox>
+                    <ActionBox click={() => this.morningRoutine()}>Do Karen's morning routine</ActionBox>
+                    <ActionBox click={() => this.nextScene(false)}>Spring out of bed</ActionBox>
                 </div>) : null}
+            </div>
+        </div>);
+
+        let routine = (<div className="routine-container">
+            <div className="text-area">Blaaa Bla Blaa blum blim Bluuu</div>
+            <div className="action-area"></div>
+            <div className="next-button-area">
+                <div className="next-button" onClick={() => this.spawnHealthScreen()}>
+                    Next
+                </div>
             </div>
         </div>);
 
         return (
             <div className="morning-container">
                 {!this.state.alarmDone ? alarmScreen : conversation}
+                {this.state.isKarenRoutine ? routine : null}
+                {this.state.isHealthScreen ?
+                    (<HealthBox
+                        text={this.state.healthData.text}
+                        johnValue={this.state.healthData.johnValue}
+                        karenValue={this.state.healthData.karenValue}
+                        socialAcceptance={this.state.healthData.socialAcceptance}
+                        click={() => this.nextScene(true)}
+                    />) : null}
             </div>
         )
     }

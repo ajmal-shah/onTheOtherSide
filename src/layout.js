@@ -9,6 +9,7 @@ import * as constants from './common/constants';
 import Opening from "./scenes/opening/opening";
 import FinallyAsleep from "./scenes/finallyAsleep/finallyAsleep";
 import Morning from "./scenes/morning/morning";
+import Angry from "./scenes/angry/angry";
 import Boss from "./scenes/boss/boss";
 import Work from "./scenes/work/work";
 import KarenCall from "./scenes/karenCall/karenCall";
@@ -47,6 +48,7 @@ class Layout extends Component {
             case constants.PAGE_INDEX.EXPLAIN: return (<Explain nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.JOHN_CALL: return (<JohnCall nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.RESOLUTION: return (<Resolution nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.ANGRY: return (<Angry nextScene={this.nextScene.bind(this)} />);
 
             default: return null;
         }

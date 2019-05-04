@@ -1,26 +1,27 @@
 .scene-enter {
-    opacity: 0.01;
-  }
-  
-  .scene-enter.scene-enter-active {
-    opacity: 1;
-    transition: opacity 500ms ease-in;
-  }
-  
-  .scene-leave {
-    opacity: 1;
-  }
-  
-  .scene-leave.scene-leave-active {
-    opacity: 0.01;
-    transition: opacity 300ms ease-in;
-  }
+  opacity: 0.01;
+}
 
-  .scene-appear {
-    opacity: 0.01;
-  }
-  
-  .scene-appear.scene-appear-active {
-    opacity: 1;
-    transition: opacity .5s ease-in;
-  }
+.scene-enter.scene-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.scene-leave {
+  opacity: 1;
+}
+
+.scene-leave.scene-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.scene-appear {
+  opacity: 0.01;
+}
+
+.scene-appear.scene-appear-active {
+  opacity: 1;
+  transition: opacity .5s ease-in;
+}
+

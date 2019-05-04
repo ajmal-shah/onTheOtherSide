@@ -13,4 +13,5 @@ export const PAGE_INDEX = {
     JOHN_CALL: 11,
     RESOLUTION: 12,
     REVEAL: 13,
+    ANGRY: 14,
 };

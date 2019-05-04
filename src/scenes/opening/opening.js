@@ -16,7 +16,7 @@ class Opening extends Component {
         return (
             <div className="openingContainer">
                 <div className="playButton" onClick={() => this.playGame()}>Play</div>
-                <HealthBox />
+                {/* <HealthBox /> */}
             </div>
         )
     }

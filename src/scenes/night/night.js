@@ -44,7 +44,7 @@ class Night extends Component {
             }
         });
         return (
-            <div className="judge-container">
+            <div className="night-container">
                 <div className="speech-dialogue-container">
                     {dialogue}
                 </div>

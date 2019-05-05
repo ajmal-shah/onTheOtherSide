@@ -1,0 +1,94 @@
+.work-again-container {
+    height: 100vh;
+    background-image: url("../../images/Scene5.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+}
+
+.karen-call-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background: rgba(8, 8, 9, 0.9);
+}
+
+.karen-call-again-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background: rgba(8, 8, 9, 0.9);
+    position: absolute;
+    top: 0;
+}
+
+.caller-name {
+    font-size: 72px;
+    font-weight: 100;
+    padding-top: 30%;
+    color: #fff;
+}
+
+.calling-label {
+    font-size: 16px;
+    font-weight: 400;
+    padding-top: 10px;
+    color: #fff;
+    font-style: italic;
+}
+
+.action-buttons {
+    padding-top: 100%;
+}
+
+.work-progress-container {
+    width: 400px;
+    padding: 15px 30px;
+}
+
+.work-bar-custom {
+    opacity: 0.95;
+    background: rgba(11, 11, 19, 0.15);
+    border-radius: 10px;
+}
+
+.work-progress-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 14px;
+    color: #111219;
+    font-weight: 500;
+}
+
+.work-bar-custom>.progress-bar {
+    background: #111219;
+    border-radius: 10px;
+}
+
+@media (min-width: 575.98px) {
+    .caller-name {
+        font-size: 72px;
+        font-weight: 100;
+        padding-top: 10%;
+        color: #fff;
+    }
+    .calling-label {
+        font-size: 16px;
+        font-weight: 400;
+        padding-top: 10px;
+        color: #fff;
+        font-style: italic;
+    }
+    .action-buttons {
+        padding-top: 20%;
+    }
+}

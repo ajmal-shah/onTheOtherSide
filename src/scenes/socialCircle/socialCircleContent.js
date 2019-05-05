@@ -17,11 +17,11 @@ const conversation = [
     },
     {
         type: "RIGHT",
-        text: "Steve: Uhh almost. You know how he is. Wants everything perfect.",
+        text: "Uhh almost. You know how he is. Wants everything perfect.",
     },
     {
         type: "LEFT",
-        text: " Ugh Yes! I hope he is happy with what you’ve done. It looks pretty good to me.",
+        text: "Steve: Ugh Yes! I hope he is happy with what you’ve done. It looks pretty good to me.",
     },
     {
         type: "RIGHT",

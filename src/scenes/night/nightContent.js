@@ -5,8 +5,16 @@ const conversation = [
     }, 
     {
         type: "LEFT",
+        text: "Are you awake?"
+    }, 
+     {
+        type: "RIGHT",
+        text: " Ya? ",
+    }, 
+    {
+        type: "LEFT",
         text: "Are you okay?"
-    },
+    },    
     {
         type: "RIGHT",
         text: " For God’s sake Karen!! please go to sleep! ",

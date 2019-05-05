@@ -17,6 +17,7 @@ class Dinner extends Component {
 
     onTap() {
         let tap = this.state.tapCount;
+        navigator.vibrate(30);
         if (this.state.tapCount < conversation.length - 1) {
             this.setState({
                 tapCount: ++tap,
@@ -29,7 +30,7 @@ class Dinner extends Component {
     }
 
     nextScene() {
-        this.props.nextScene(10);
+        this.props.nextScene(18);
     }
 
     render() {

@@ -10,9 +10,20 @@ class HealthBox extends Component {
         super();
         this.state = {
             isNext: false,
+            tapCount: 0,
         }
     }
-  
+
+    onTap() {
+        let tap = this.state.tapCount;
+        if (this.state.tapCount < 1) {
+            this.updateHealth();
+            this.setState({
+                tapCount: ++tap,
+            });
+        }
+    }
+    
     updateHealth() {
         if (this.props.johnValue) {
             window.johnValue = window.johnValue - 25;
@@ -33,7 +44,7 @@ class HealthBox extends Component {
             <div className="text-area">
                 {this.props.text}
             </div>
-            <div className="health-area" onClick={() => this.updateHealth()}>
+            <div className="health-area" onClick={() => this.onTap()}>
                 <div className="meter-container">
                     <div className="meter-label">
                         Your Composure
@@ -61,7 +72,7 @@ class HealthBox extends Component {
             </div>
             <div className="next-button-area">
                 {this.state.isNext ? (<div className="next-button" onClick={() => this.props.click()}>
-                    Next
+                    {this.props.isLost ? "Lost" : "Next"}
                 </div>) : null}
             </div>
         </div>);

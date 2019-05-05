@@ -23,6 +23,7 @@ import Resolution from "./scenes/resolution/resolution";
 import Judge from "./scenes/judge/judge";
 import KarenCallAgain from "./scenes/karenCallAgain/karenCallAgain";
 import Night from "./scenes/night/night";
+import WorkAgain from "./scenes/workAgain/workAgain";
 
 class Layout extends Component {
     constructor() {
@@ -55,6 +56,7 @@ class Layout extends Component {
             case constants.PAGE_INDEX.JUDGE: return (<Judge nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.KAREN_CALL_AGAIN: return (<KarenCallAgain nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.NIGHT: return (<Night nextScene={this.nextScene.bind(this)} />);
+            case constants.PAGE_INDEX.WORK_AGAIN: return (<WorkAgain nextScene={this.nextScene.bind(this)} />);
 
             default: return null;
         }

@@ -43,10 +43,21 @@ class Work extends Component {
                     isKarenCall: true,
                 });
             }
+            this.startCall();
         }
     }
 
+    startCall() {
+        navigator.vibrate([500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100]);
+        // this.audio.play();
+    }
+
+    stopCall(){
+        navigator.vibrate(0);
+    }
+
     ignoreCall() {
+        this.stopCall();
         this.setState({
             isKarenCall: false,
             tapCount: 13,
@@ -55,9 +66,10 @@ class Work extends Component {
     }
 
     nextScene(isFirstCall) {
-        if(isFirstCall){
+        this.stopCall();
+        if (isFirstCall) {
             this.props.nextScene(5);
-        }else{
+        } else {
             this.props.nextScene(16);
         }
     }

@@ -16,4 +16,5 @@ export const PAGE_INDEX = {
     ANGRY: 14,
     JUDGE: 15,
     KAREN_CALL_AGAIN: 16,
+    NIGHT: 17,
 };

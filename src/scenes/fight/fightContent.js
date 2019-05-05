@@ -21,7 +21,7 @@ const conversation = [
     },
     {
         type: "RIGHT",
-        text: " I don’t know!",
+        text: " Yes Karen! I know that! But I just can’t alienate my friends because of that on a regular basis!",
     },
 ];
 

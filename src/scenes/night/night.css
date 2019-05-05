@@ -1,0 +1,14 @@
+.boss-container {
+    height: 100vh;
+    /* background-image: url("../../images/Scene4.jpg"); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+}
+
+.button-white {
+    background: #fff;
+    font-weight: 600;
+    color: #111219;
+}

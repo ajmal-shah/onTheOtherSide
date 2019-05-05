@@ -17,6 +17,18 @@
     background: rgba(8, 8, 9, 0.9);
 }
 
+.karen-call-again-container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    background: rgba(8, 8, 9, 0.9);
+    position: absolute;
+    top: 0;
+}
+
 .caller-name {
     font-size: 72px;
     font-weight: 100;
@@ -39,7 +51,6 @@
 .work-progress-container {
     width: 400px;
     padding: 15px 30px;
-  
 }
 
 .work-bar-custom {
@@ -54,8 +65,8 @@
     align-items: center;
     flex-direction: column;
     font-size: 14px;
-    color:#111219;
-    font-weight:500;
+    color: #111219;
+    font-weight: 500;
 }
 
 .work-bar-custom>.progress-bar {

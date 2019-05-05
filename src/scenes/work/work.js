@@ -14,6 +14,15 @@ class Work extends Component {
             tapCount: 0,
             isEndOfScene: false,
             isKarenCall: false,
+            spawnKarenCallAgain: false,
+        }
+    }
+
+    componentWillMount() {
+        if (window.isKarenCallAgain) {
+            this.setState({
+                tapCount: 12
+            });
         }
     }
 
@@ -25,27 +34,32 @@ class Work extends Component {
                 tapCount: ++tap,
             });
         } else if (this.state.tapCount === 15) {
-            this.setState({
-                isKarenCall: true,
-            });
+            if (window.isKarenCallAgain) {
+                this.setState({
+                    spawnKarenCallAgain: true,
+                });
+            } else {
+                this.setState({
+                    isKarenCall: true,
+                });
+            }
         }
-        // if (this.state.tapCount < conversation.length - 1) {
-        //     this.setState({
-        //         tapCount: ++tap,
-        //     });
-        // } else if (this.state.tapCount === conversation.length - 1) {
-        //     this.setState({
-        //         isEndOfScene: true,
-        //     });
-        // }
     }
 
     ignoreCall() {
-
+        this.setState({
+            isKarenCall: false,
+            tapCount: 13,
+        });
+        window.karenCallIgnored = true;
     }
 
-    nextScene() {
-        this.props.nextScene(5);
+    nextScene(isFirstCall) {
+        if(isFirstCall){
+            this.props.nextScene(5);
+        }else{
+            this.props.nextScene(16);
+        }
     }
 
     render() {
@@ -70,14 +84,24 @@ class Work extends Component {
             <div className="caller-name">Karen</div>
             <div className="calling-label">calling</div>
             <div className="action-buttons">
-                <ActionBox click={() => this.nextScene()}>Pick up</ActionBox>
+                <ActionBox click={() => this.nextScene(true)}>Pick up</ActionBox>
                 <ActionBox click={() => this.ignoreCall()}>Ignore</ActionBox>
+            </div>
+        </div>);
+
+        const karenCallAgain = (<div className="karen-call-again-container">
+            <div className="caller-name">Karen</div>
+            <div className="calling-label">calling</div>
+            <div className="action-buttons">
+                <ActionBox click={() => this.nextScene(false)}>Pick up</ActionBox>
+                {/* <ActionBox click={() => this.ignoreCall()}>Ignore</ActionBox> */}
             </div>
         </div>);
 
         return (
             <div className="work-container">
                 {this.state.isKarenCall ? karenCall : workContent}
+                {this.state.spawnKarenCallAgain ? karenCallAgain : null}
             </div>
         )
     }

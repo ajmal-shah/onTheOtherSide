@@ -19,16 +19,32 @@ class KarenCall extends Component {
             isNextVisible: false,
         }
         this.devicemotionListener = this.devicemotionListener.bind(this);
+        this.dynamicCoversation = [];
+        this.ignoreContent = [{
+            type: "LEFT",
+            text: "Why wont you pick up the damn thing?!Why did you igonre my call?",
+        },
+        {
+            type: "RIGHT",
+            text: "I am working!",
+        },];
     }
-
+    componentWillMount() {
+        if (window.karenCallIgnored) {
+            Array.prototype.push.apply(this.ignoreContent, conversation)
+            this.dynamicCoversation = this.ignoreContent;
+        } else {
+            this.dynamicCoversation = conversation;
+        }
+    }
     onTap() {
         let tap = this.state.tapCount;
         navigator.vibrate(30);
-        if (this.state.tapCount < conversation.length - 1) {
+        if (this.state.tapCount < this.dynamicCoversation.length - 1) {
             this.setState({
                 tapCount: ++tap,
             });
-        } else if (this.state.tapCount === conversation.length - 1) {
+        } else if (this.state.tapCount === this.dynamicCoversation.length - 1) {
             this.setState({
                 isEndOfScene: true,
             });
@@ -65,11 +81,14 @@ class KarenCall extends Component {
     nextScene(isWalk) {
         if (isWalk) {
             this.props.nextScene(15);
+        }else{
+            window.isKarenCallAgain = true;
+            this.props.nextScene(4);
         }
     }
 
     render() {
-        let dialogue = conversation.map((dialogueObject, index) => {
+        let dialogue = this.dynamicCoversation.map((dialogueObject, index) => {
             if (index <= this.state.tapCount) {
                 return (
                     <SpeechBubble key={index} right={dialogueObject.type === "RIGHT" ? true : false}>
@@ -101,7 +120,7 @@ class KarenCall extends Component {
                 <div className="interaction-box" onClick={() => this.onTap()} >
                     {this.state.isEndOfScene ? (<div>
                         <ActionBox click={() => this.walk()}>Take a walk</ActionBox>
-                        <ActionBox click={() => this.nextScene()}>Finish work</ActionBox>
+                        <ActionBox click={() => this.nextScene(false)}>Get back to work</ActionBox>
                     </div>) : null}
                 </div>
 

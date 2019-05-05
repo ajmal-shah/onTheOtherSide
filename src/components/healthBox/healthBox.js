@@ -6,16 +6,26 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { MDBProgress } from 'mdbreact';
 
 class HealthBox extends Component {
-    componentWillMount(){
-        if(this.props.johnValue){
-            window.johnValue = window.johnValue - 20;
+    constructor() {
+        super();
+        this.state = {
+            isNext: false,
         }
-        if(this.props.karenValue){
-            window.karenValue = window.karenValue - 20;
+    }
+  
+    updateHealth() {
+        if (this.props.johnValue) {
+            window.johnValue = window.johnValue - 25;
         }
-        if(this.props.socialAcceptance){
-            window.socialAcceptance = window.socialAcceptance - 20;
+        if (this.props.karenValue) {
+            window.karenValue = window.karenValue - 25;
         }
+        if (this.props.socialAcceptance) {
+            window.socialAcceptance = window.socialAcceptance - 25;
+        }
+        this.setState({
+            isNext: true,
+        });
     }
 
     render() {
@@ -23,7 +33,7 @@ class HealthBox extends Component {
             <div className="text-area">
                 {this.props.text}
             </div>
-            <div className="health-area">
+            <div className="health-area" onClick={() => this.updateHealth()}>
                 <div className="meter-container">
                     <div className="meter-label">
                         Your Composure
@@ -50,11 +60,12 @@ class HealthBox extends Component {
                 </div>
             </div>
             <div className="next-button-area">
-                <div className="next-button" onClick={() => this.props.click()}>
+                {this.state.isNext ? (<div className="next-button" onClick={() => this.props.click()}>
                     Next
-            </div>
+                </div>) : null}
             </div>
         </div>);
+
         return (
             <div className="health-box-container">
                 <ReactCSSTransitionGroup

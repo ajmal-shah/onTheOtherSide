@@ -34,7 +34,7 @@ const conversation = [
     {
         type: "LEFT",
         text: "Bye, Take care",
-    },
+    }
 ];
 
 export default conversation;

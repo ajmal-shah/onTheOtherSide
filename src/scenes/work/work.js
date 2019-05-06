@@ -17,6 +17,9 @@ class Work extends Component {
         }
         this.url = require('../../sound/ringtone.mp3');
         this.audio = new Audio(this.url);
+        this.typingUrl = require('../../sound/typing.mp3');
+        this.typingAudio = new Audio(this.typingUrl);
+        
     }
 
     componentWillMount() {
@@ -30,6 +33,14 @@ class Work extends Component {
     onTap() {
         let tap = this.state.tapCount;
         navigator.vibrate(30);
+        this.typingAudio.play();
+        setTimeout(
+            function () {
+                this.typingAudio.pause();
+            }
+                .bind(this),
+            1000
+        );
         if (this.state.tapCount < 15) {
             this.setState({
                 tapCount: ++tap,

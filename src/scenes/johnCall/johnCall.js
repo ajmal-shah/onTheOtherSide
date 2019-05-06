@@ -16,7 +16,7 @@ class JohnCall extends Component {
             isEndOfScene: false,
             isHealthScreen: false,
             healthData: {
-                text: "You friends now understand that you are not making excuses. They no longer think you are a loser. Karen is less anxious as you have checked on her. She feels that she is important to you now.",
+                text: "Your friends now realise that you are not just making excuses. They understand your situation and no longer think you are a loser. Moreover, Karen’s state of mind has improved now that you have checked on her and she feels that she is important to you.",
               
             }
         }

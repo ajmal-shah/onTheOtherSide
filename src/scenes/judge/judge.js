@@ -15,7 +15,7 @@ class Judge extends Component {
             isEndOfScene: false,
             isHealthScreen: false,
             healthData: {
-                text: "You are missing from your seat too often. Your colleagues doubt your credibility.",
+                text: "You are absent from your seat very often. Your colleagues doubt your credibility.",
               
             }
         }

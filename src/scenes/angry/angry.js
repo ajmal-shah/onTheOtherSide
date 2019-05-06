@@ -16,7 +16,7 @@ class Angry extends Component {
             isHealthScreen: false,
             isNextVisible: false,
             healthData: {
-                text: "Karen is obsessed with healthy living and insists on following her routine while waking up. Karen is upset that you never listen to her.",
+                text: "Karen is obsessed with healthy living and insists on you following a fixed morning routine after waking up every day. Karen is upset that you disregard her healthy lifestyle choice and suggestions.",
                 johnValue: 80,
                 karenValue: 80,
                 socialAcceptance: 100

@@ -16,7 +16,7 @@ class KarenCallAgain extends Component {
             isHealthScreen: false,
             isNextVisible: false,
             healthData: {
-                text: "Karen is fed up of you ignoring her all the time. The incessant finght is affecting your work. You lost composure",
+                text: "Karen is displeased with you ignoring her all the time and paying no heed to her concerns. Subsequently, the incessant fighting is affecting your work.",
             }
         }
     }

@@ -24,7 +24,7 @@ class Morning extends Component {
             isHealthScreen: false,
             isNextVisible: false,
             healthData: {
-                text: "Performing the routine has consumed a lot of time. You are late to work again. Your colleagues doubt your committment.",
+                text: "Performing the morning routine has consumed a lot of time. You are late for work again. Your colleagues discreetly question your commitment.",
                 johnValue: 80,
                 karenValue: 100,
                 socialAcceptance: 80
@@ -160,7 +160,7 @@ class Morning extends Component {
         </div>);
 
         let routine = (<div className="routine-container">
-            <div className="text-area">Karen is obsessive about health and insists that while getting up, you stretch, roll onto your side and push yourself to sitting before you stand.</div>
+            <div className="text-area">Karen’s health and well-being obsession makes her believe in starting the day off by doing morning stretches. She emphasises on taking some time while you get off the bed and disapproves of jumping off in a hurry.  </div>
             <div className="action-area">
                 <div className="routine-progress-text">Shake phone slowly to do the routine</div>
                 <div className="routine-progress-bar">

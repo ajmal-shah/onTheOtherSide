@@ -80,7 +80,7 @@ class HealthBox extends Component {
             </div>
             <div className="next-button-area">
                 {this.state.isNext ? (<div className="next-button" onClick={() => this.props.click()}>
-                    {this.props.isLost ? "Lost" : "Next"}
+                    {this.props.isLost ? "You Lost" : "Next"}
                 </div>) : null}
             </div>
         </div>);

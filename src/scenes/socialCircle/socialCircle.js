@@ -17,7 +17,7 @@ class SocialCircle extends Component {
             isHealthScreen: false,
             isNextVisible: false,
             healthData: {
-                text: "You always back off from plans without any reason. Your colleagues think you have become a loser",
+                text: "You always decline your colleagues’ invitations to any activity outside of work without any relevant reasons. Your colleagues think you have become a boring and dull person.",
             }
         }
     }

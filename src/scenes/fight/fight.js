@@ -16,7 +16,7 @@ class Fight extends Component {
             isEndOfScene: false,
             isHealthScreen: false,
             healthData: {
-                text: "Karen hates it when you stress more after a long day. She feels you don't take her seriously enough. The repeated fights are affecting you.",
+                text: "Karen finds it unacceptable that you burden yourself more after a long day of work. She feels that you don't take her seriously enough. The repeated fights are wearing you down.",
             }
         }
     }

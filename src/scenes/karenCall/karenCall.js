@@ -98,7 +98,7 @@ class KarenCall extends Component {
         });
 
         let walkScreen = (<div className="walk-container">
-            <div className="text-area">Karen insists you stretch and take a walk every hour while you are at your desk.</div>
+            <div className="text-area">Karen disapproves of long hours of sitting and insists that you stretch and take a walk every hour while you are at work.</div>
             <div className="action-area">
                 <div className="routine-progress-text">Take a walk</div>
                 <div className="routine-progress-bar">

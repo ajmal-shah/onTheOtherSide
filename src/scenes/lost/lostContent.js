@@ -1,6 +1,7 @@
 let thoughts = [
     "Oh C'mon",
-    "Late again !! I Can't be late every other day!"
+    "Late again!! I can't be late every other day!",
+    "I can't take this anymore"
 ]
 
 export default thoughts;

@@ -60,7 +60,8 @@ class Layout extends Component {
             case constants.PAGE_INDEX.NIGHT: return (<Night nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.WORK_AGAIN: return (<WorkAgain nextScene={this.nextScene.bind(this)} />);
             case constants.PAGE_INDEX.SLEPT: return (<Slept nextScene={this.nextScene.bind(this)} />);
- 
+            case constants.PAGE_INDEX.REVEAL: return (<Reveal nextScene={this.nextScene.bind(this)} />);
+
             default: return null;
         }
     }

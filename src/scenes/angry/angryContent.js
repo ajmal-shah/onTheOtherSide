@@ -9,7 +9,15 @@ const conversation = [
     },
     {
         type: "RIGHT",
-        text: "Not again! ",
+        text: " I am late for work! I can’t be late all the time. ",
+    },
+    {
+        type: "LEFT",
+        text: "No you need to understand that it's important to do these things!",
+    },
+    {
+        type: "RIGHT",
+        text: " Oh Come on!",
     },
 ];
 

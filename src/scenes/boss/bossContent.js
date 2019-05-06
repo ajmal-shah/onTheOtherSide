@@ -1,7 +1,7 @@
 const conversation = [
     {
         type: "LEFT",
-        text: "John, what is the status of the blah task?",
+        text: "John, what is the status of the deliverable?",
     },
     {
         type: "RIGHT",
@@ -9,7 +9,7 @@ const conversation = [
     },
     {
         type: "LEFT",
-        text: "This was supposed to be delivered 2 days ago!",
+        text: "This was supposed to be delivered 2 days ago! We should have been done with the work by now!",
     },
     {
         type: "RIGHT",

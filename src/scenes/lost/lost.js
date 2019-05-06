@@ -18,7 +18,7 @@ class Lost extends Component {
             isEndOfScene: false,
             isHealthScreen: false,
             healthData: {
-                text: "A long day and all the fights with Karen has left you extremely tired. You are late to work again. Your colleagues doubt your productivity.",
+                text: "The added exhaustion of having to argue with Karen after an intense day at work, has left you drained. You are late for work again. Your colleagues doubt your sense of responsibility.",
             }
         }
     }

@@ -14,6 +14,8 @@ class WorkAgain extends Component {
             tapCount: 0,
             isEndOfScene: false,
         }
+        this.typingUrl = require('../../sound/typing.mp3');
+        this.typingAudio = new Audio(this.typingUrl);
     }
 
     componentWillMount() {
@@ -23,6 +25,16 @@ class WorkAgain extends Component {
     onTap() {
         let tap = this.state.tapCount;
         navigator.vibrate(30);
+        if (!this.state.isEndOfScene) {
+            this.typingAudio.play();
+            setTimeout(
+                function () {
+                    this.typingAudio.pause();
+                }
+                    .bind(this),
+                1000
+            );
+        }
         if (this.state.tapCount < 5) {
             this.setState({
                 tapCount: ++tap,

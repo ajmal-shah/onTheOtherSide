@@ -21,14 +21,6 @@ const conversation = [
     },
     {
         type: "LEFT",
-        text: "Steve: Ugh Yes! I hope he is happy with what you’ve done. It looks pretty good to me.",
-    },
-    {
-        type: "RIGHT",
-        text: "Yeah man. I hope so too.",
-    },
-    {
-        type: "LEFT",
         text: "Ryan:  It has been such a long day. I need a drink.",
     },
     {

@@ -1,0 +1,8 @@
+.slept-container{
+    height: 100vh;
+    background-image: url("../../images/Scene15.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow: hidden;
+}

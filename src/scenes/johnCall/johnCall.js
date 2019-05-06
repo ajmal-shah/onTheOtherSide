@@ -4,6 +4,8 @@ import "./johnCall.css";
 //Components
 import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
+import HealthBox from '../../components/healthBox/healthBox';
+
 import conversation from './johnCallContent';
 
 class JohnCall extends Component {
@@ -12,11 +14,17 @@ class JohnCall extends Component {
         this.state = {
             tapCount: 0,
             isEndOfScene: false,
+            isHealthScreen: false,
+            healthData: {
+                text: "You friends now understand that you are not making excuses. They no longer think you are a loser. Karen is less anxious as you have checked on her. She feels that she is important to you now.",
+              
+            }
         }
     }
 
     onTap() {
         let tap = this.state.tapCount;
+        navigator.vibrate(30);
         if (this.state.tapCount < conversation.length - 1) {
             this.setState({
                 tapCount: ++tap,
@@ -28,8 +36,14 @@ class JohnCall extends Component {
         }
     }
 
+    spawnHealthScreen() {
+        this.setState({
+            isHealthScreen: true,
+        });
+    }
+
     nextScene() {
-        this.props.nextScene(12);
+        this.props.nextScene(19);
     }
 
     render() {
@@ -48,9 +62,17 @@ class JohnCall extends Component {
                 </div>
                 <div className="interaction-box" onClick={() => this.onTap()} >
                     {this.state.isEndOfScene ? (<div>
-                        <ActionBox click={() => this.nextScene()}>Next</ActionBox>
+                        <ActionBox click={() => this.spawnHealthScreen()}>Next</ActionBox>
                     </div>) : null}
                 </div>
+                {this.state.isHealthScreen ?
+                    (<HealthBox
+                        text={this.state.healthData.text}
+                        johnValue={true}
+                        karenValue={true}
+                        socialAcceptance={true}
+                        click={() => this.nextScene()}
+                    />) : null}
             </div>
         )
     }

@@ -4,7 +4,6 @@ import "./work.css";
 import { MDBProgress } from 'mdbreact';
 
 //Components
-import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
 
 class Work extends Component {
@@ -16,6 +15,8 @@ class Work extends Component {
             isKarenCall: false,
             spawnKarenCallAgain: false,
         }
+        this.url = require('../../sound/ringtone.mp3');
+        this.audio = new Audio(this.url);
     }
 
     componentWillMount() {
@@ -49,11 +50,13 @@ class Work extends Component {
 
     startCall() {
         navigator.vibrate([500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100, 500, 100]);
-        // this.audio.play();
+        this.audio.play();
     }
 
     stopCall(){
         navigator.vibrate(0);
+        this.audio.pause();
+        this.audio.currentTime = 0;
     }
 
     ignoreCall() {

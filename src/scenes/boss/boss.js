@@ -42,6 +42,7 @@ class Boss extends Component {
                     </SpeechBubble>)
             }
         });
+
         return (
             <div className="boss-container">
                 <div className="speech-dialogue-container">

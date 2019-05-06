@@ -13,6 +13,8 @@ class Angry extends Component {
         this.state = {
             tapCount: 0,
             isEndOfScene: false,
+            isHealthScreen: false,
+            isNextVisible: false,
             healthData: {
                 text: "Karen is obsessed with healthy living and insists on following her routine while waking up. Karen is upset that you never listen to her.",
                 johnValue: 80,
@@ -39,6 +41,12 @@ class Angry extends Component {
         }
     }
 
+    spawnHealthScreen() {
+        this.setState({
+            isHealthScreen: true,
+        });
+    }
+
     nextScene() {
         this.props.nextScene(3);
     }
@@ -59,7 +67,10 @@ class Angry extends Component {
                     {dialogue}
                 </div>
                 <div className="interaction-box" onClick={() => this.onTap()} >
-                    {this.state.isEndOfScene ?
+                    {this.state.isEndOfScene ? (<div>
+                        <ActionBox click={() => this.spawnHealthScreen()}>Next</ActionBox>
+                    </div>) : null}
+                    {this.state.isHealthScreen ?
                         (<HealthBox
                             text={this.state.healthData.text}
                             johnValue={true}

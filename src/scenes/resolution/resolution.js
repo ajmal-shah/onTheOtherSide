@@ -19,6 +19,7 @@ class Resolution extends Component {
 
     onTap() {
         let tap = this.state.tapCount;
+        navigator.vibrate(30);
         if (this.state.tapCount < thoughts.length - 1) {
             this.setState({
                 tapCount: ++tap,
@@ -32,7 +33,7 @@ class Resolution extends Component {
 
 
     nextScene() {
-        // this.props.nextScene(2);
+        this.props.nextScene(13);
     }
 
     render() {

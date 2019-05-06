@@ -14,6 +14,14 @@ class HealthBox extends Component {
         }
     }
 
+    componentWillMount() {
+        if (this.props.preLost){
+            window.johnValuePreLost = window.johnValue;
+            window.karenValuePreLost = window.karenValue;
+            window.socialAcceptancePreLost = window.socialAcceptance;
+        }
+    }
+
     onTap() {
         let tap = this.state.tapCount;
         if (this.state.tapCount < 1) {
@@ -23,16 +31,16 @@ class HealthBox extends Component {
             });
         }
     }
-    
+
     updateHealth() {
         if (this.props.johnValue) {
-            window.johnValue = window.johnValue - 25;
+            window.johnValue = !window.window.isPositive ? window.johnValue - 25 : 100;
         }
         if (this.props.karenValue) {
-            window.karenValue = window.karenValue - 25;
+            window.karenValue = !window.window.isPositive ? window.karenValue - 25 : 100;
         }
         if (this.props.socialAcceptance) {
-            window.socialAcceptance = window.socialAcceptance - 25;
+            window.socialAcceptance = !window.window.isPositive ? window.socialAcceptance - 25 : 100;
         }
         this.setState({
             isNext: true,

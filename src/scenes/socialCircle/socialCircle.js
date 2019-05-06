@@ -4,6 +4,8 @@ import "./socialCircle.css";
 //Components
 import SpeechBubble from '../../components/speechBubble/speechBubble';
 import ActionBox from '../../components/actionBox/actionBox';
+import HealthBox from '../../components/healthBox/healthBox';
+
 import conversation from './socialCircleContent';
 
 class SocialCircle extends Component {
@@ -12,6 +14,11 @@ class SocialCircle extends Component {
         this.state = {
             tapCount: 0,
             isEndOfScene: false,
+            isHealthScreen: false,
+            isNextVisible: false,
+            healthData: {
+                text: "You always back off from plans without any reason. Your colleagues think you have become a loser",
+            }
         }
     }
 
@@ -27,6 +34,12 @@ class SocialCircle extends Component {
                 isEndOfScene: true,
             });
         }
+    }
+
+    spawnHealthScreen() {
+        this.setState({
+            isHealthScreen: true,
+        });
     }
 
     nextScene(isPub) {
@@ -54,9 +67,17 @@ class SocialCircle extends Component {
                 <div className="interaction-box" onClick={() => this.onTap()} >
                     {this.state.isEndOfScene ? (<div>
                         <ActionBox click={() => this.nextScene(true)}>Okay! Let's go</ActionBox>
-                        <ActionBox click={() => this.nextScene(false)}>No, I don't think so</ActionBox>
+                        <ActionBox click={() => this.spawnHealthScreen()}>No, I don't think so</ActionBox>
                     </div>) : null}
                 </div>
+                {this.state.isHealthScreen ?
+                    (<HealthBox
+                        text={this.state.healthData.text}
+                        johnValue={true}
+                        karenValue={false}
+                        socialAcceptance={true}
+                        click={() => this.nextScene(false)}
+                    />) : null}
             </div>
         )
     }

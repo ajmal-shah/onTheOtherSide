@@ -44,6 +44,9 @@ class Lost extends Component {
     }
 
     nextScene() {
+        window.johnValue = window.johnValuePreLost;
+        window.karenValue = window.karenValuePreLost;
+        window.socialAcceptance = window.socialAcceptancePreLost;
         this.props.nextScene(6);
     }
 

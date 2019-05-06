@@ -71,6 +71,7 @@ class Fight extends Component {
                         johnValue={true}
                         karenValue={true}
                         socialAcceptance={false}
+                        preLost={true}
                         click={() => this.nextScene()}
                     />) : null}
             </div>

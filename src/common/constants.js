@@ -18,4 +18,5 @@ export const PAGE_INDEX = {
     KAREN_CALL_AGAIN: 16,
     NIGHT: 17,
     WORK_AGAIN: 18,
+    SLEPT: 19,
 };

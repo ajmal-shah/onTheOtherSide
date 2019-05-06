@@ -136,7 +136,7 @@ class Morning extends Component {
     render() {
         const alarm = (<div className="alarm-container">
             <div className="time">{this.state.alarmTime[this.state.alarmCount - 1]}</div>
-            <div className="date">April 28, Tue</div>
+            <div className="date">April 28, Thu</div>
             <div className="action-buttons">
                 <ActionBox click={() => this.stopAlarm()}>Snooze</ActionBox>
                 <ActionBox click={() => this.stopAlarm()}>Turn Off</ActionBox>

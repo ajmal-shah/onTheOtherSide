@@ -9,10 +9,6 @@ const conversation = [
     },
     {
         type: "LEFT",
-        text: "Ryan: Haha! Tell me about it. I think I am done for the day as well.",
-    },
-    {
-        type: "LEFT",
         text: "Steve: what about you man? You managed to finish what the boss wanted?",
     },
     {

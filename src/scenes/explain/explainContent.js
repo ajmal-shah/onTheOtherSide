@@ -21,7 +21,7 @@ const conversation = [
     },
     {
         type: "LEFT",
-        text: "I hear Sam can't make it. You wanna come along John? It is going to be awsome. You love live music don't you?",
+        text: "I hear Sam can't make it. You wanna come along John? It is going to be awesome. You love live music don't you?",
     },
 ];
 

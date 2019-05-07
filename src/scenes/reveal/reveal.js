@@ -30,6 +30,15 @@ class Reveal extends Component {
     }
 
     render() {
+        let splash = (<div className="splash-container">
+            <div className="game-name-container">
+                <div className="game-name"></div>
+            </div>
+            <div className="nid-logo-container">
+                <div className="nid-logo"></div>
+            </div>
+        </div>);
+
         return (
             <div className="reveal-container" onClick={() => this.onTap()}>
                 {/* This is a hack for animation. Bad code. */}
@@ -61,6 +70,16 @@ class Reveal extends Component {
                     transitionLeaveTimeout={300}>
                     {/* <div key={this.state.tapCount}>{thoughts[this.state.tapCount]}</div> */}
                     <div key="key"> {thoughts[2]}</div>
+                </ReactCSSTransitionGroup> : null}
+
+                {this.state.isEndOfScene? <ReactCSSTransitionGroup
+                    transitionName="scene"
+                    transitionAppear={true}
+                    transitionAppearTimeout={500}
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
+                    {/* <div key={this.state.tapCount}>{thoughts[this.state.tapCount]}</div> */}
+                    <div key="key"> {splash}</div>
                 </ReactCSSTransitionGroup> : null}
             </div>
         )

@@ -5,11 +5,11 @@ const conversation = [
     },
     {
         type: "RIGHT",
-        text: "I couldn't avoid it. They would think i am a loser. How many times can I say no to them?",
+        text: "I couldn't avoid it. They would think I am a loser. How many times can I say no to them?",
     },
     {
         type: "LEFT",
-        text: "But i only wanted you to take some rest after such a long day.!",
+        text: "But I only wanted you to take some rest after such a long day.!",
     },
     {
         type: "RIGHT",
